@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Liên hệ - DevOps Lab 1 - Nguyễn Công Bằng">
-    <title>Liên hệ — DevOps Portfolio</title>
+    <meta name="description" content="Trang thông tin liên hệ của tác giả Nguyễn Công Bằng qua Email và GitHub dự án DevOps.">
+    <title>Liên hệ — DevOps Portfolio | Nguyễn Công Bằng</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     <style>
         * {
             margin: 0;
@@ -14,18 +15,18 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #4338ca 0%, #6b21a8 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333;
+            color: #1f2937;
             padding: 20px;
         }
 
         .container {
-            background: white;
+            background: #ffffff;
             border-radius: 16px;
             padding: 40px;
             max-width: 600px;
@@ -41,49 +42,57 @@
             gap: 12px;
             margin-bottom: 24px;
             padding-bottom: 16px;
-            border-bottom: 1px solid #edf2f7;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .nav-link {
             text-decoration: none;
-            color: #4a5568;
+            color: #374151;
             font-weight: 600;
             font-size: 15px;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: 8px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.2s ease;
         }
 
-        .nav-link:hover {
-            color: #667eea;
-            background: #f0f4ff;
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            color: #312e81;
+            background: #eef2ff;
+            outline: 2px solid #4338ca;
+            outline-offset: 2px;
         }
 
         .nav-link.active {
-            color: white;
-            background: #667eea;
+            color: #ffffff;
+            background: #3730a3;
         }
 
         h1 {
-            color: #667eea;
+            color: #312e81;
             margin-bottom: 8px;
             font-size: 28px;
+            font-weight: 700;
         }
 
         h2 {
-            color: #764ba2;
+            color: #581c87;
             margin-bottom: 20px;
             font-size: 16px;
-            font-weight: normal;
+            font-weight: 500;
         }
 
         .contact-card {
-            background: #f8f9fa;
+            background: #f8fafc;
             border-radius: 12px;
             padding: 24px;
             margin: 16px 0;
             text-align: left;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #4338ca;
         }
 
         .contact-item {
@@ -91,39 +100,45 @@
             align-items: center;
             margin: 14px 0;
             font-size: 15px;
+            color: #1e293b;
         }
 
         .contact-item .icon {
             font-size: 22px;
             margin-right: 12px;
             width: 28px;
+            display: inline-block;
         }
 
         .contact-item a {
-            color: #667eea;
-            text-decoration: none;
+            color: #3730a3;
+            text-decoration: underline;
             font-weight: 600;
+            padding: 4px;
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
+        .contact-item a:hover,
+        .contact-item a:focus-visible {
+            color: #1e1b4b;
+            outline: 2px solid #4338ca;
+            border-radius: 4px;
         }
 
         .footer {
             margin-top: 24px;
             font-size: 13px;
-            color: #999;
+            color: #475569;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <main class="container">
         <!-- Navigation bar -->
-        <nav class="navbar" aria-label="Main Navigation">
+        <nav class="navbar" aria-label="Điều hướng chính">
             <a href="index.html" class="nav-link">Trang chủ</a>
             <a href="about.html" class="nav-link">Giới thiệu</a>
-            <a href="contact.html" class="nav-link active">Liên hệ</a>
+            <a href="contact.html" class="nav-link active" aria-current="page">Liên hệ</a>
         </nav>
 
         <h1>Thông Tin Liên Hệ</h1>
@@ -131,27 +146,27 @@
 
         <div class="contact-card">
             <div class="contact-item">
-                <span class="icon">📧</span>
-                <span>Email: <a href="mailto:nguyencongbang2005@gmail.com">nguyencongbang2005@gmail.com</a></span>
+                <span class="icon" aria-hidden="true">📧</span>
+                <span>Email: <a href="mailto:nguyencongbang2005@gmail.com" aria-label="Gửi email tới Nguyễn Công Bằng">nguyencongbang2005@gmail.com</a></span>
             </div>
             <div class="contact-item">
-                <span class="icon">🐙</span>
-                <span>GitHub: <a href="https://github.com/congbang24" target="_blank">github.com/congbang24</a></span>
+                <span class="icon" aria-hidden="true">🐙</span>
+                <span>GitHub: <a href="https://github.com/congbang24" target="_blank" rel="noopener noreferrer" aria-label="Truy cập trang GitHub cá nhân congbang24 (mở tab mới)">github.com/congbang24</a></span>
             </div>
             <div class="contact-item">
-                <span class="icon">📁</span>
-                <span>Repository: <a href="https://github.com/congbang24/devops-lab1-portfolio" target="_blank">devops-lab1-portfolio</a></span>
+                <span class="icon" aria-hidden="true">📁</span>
+                <span>Repository: <a href="https://github.com/congbang24/devops-lab1-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Truy cập kho lưu trữ GitHub của dự án (mở tab mới)">devops-lab1-portfolio</a></span>
             </div>
             <div class="contact-item">
-                <span class="icon">🏫</span>
-                <span>Đơn vị: Đại học Công nghệ Thông tin & Truyền thông (ICTU)</span>
+                <span class="icon" aria-hidden="true">🏫</span>
+                <span>Đơn vị: Đại học Công nghệ Thông tin &amp; Truyền thông (ICTU)</span>
             </div>
         </div>
 
-        <div class="footer">
+        <footer class="footer">
             <p>DevOps Lab 1 — Multi-page Navigation Example</p>
-        </div>
-    </div>
+        </footer>
+    </main>
 </body>
 
 </html>
