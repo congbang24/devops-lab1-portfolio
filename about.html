@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DevOps Lab 1 Portfolio - Nguyễn Công Bằng - CI/CD Pipeline">
-    <title>DevOps Lab 1 — My Portfolio</title>
+    <meta name="description" content="Giới thiệu - DevOps Lab 1 - Nguyễn Công Bằng">
+    <title>Giới thiệu — DevOps Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -70,17 +70,12 @@
         }
 
         .avatar {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #667eea;
             box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
-            transition: transform 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: scale(1.05);
         }
 
         h1 {
@@ -96,33 +91,30 @@
             font-weight: normal;
         }
 
-        .info {
+        .about-content {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             margin: 16px 0;
             text-align: left;
             border-left: 4px solid #667eea;
+            line-height: 1.6;
         }
 
-        .info p {
-            margin: 8px 0;
-            font-size: 15px;
+        .about-content h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 17px;
         }
 
-        .badge-list {
-            margin: 16px 0;
+        .about-content ul {
+            margin-left: 20px;
+            margin-bottom: 8px;
         }
 
-        .badge {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin: 4px;
-            font-weight: 500;
+        .about-content li {
+            margin: 6px 0;
+            font-size: 14px;
         }
 
         .footer {
@@ -130,59 +122,42 @@
             font-size: 13px;
             color: #999;
         }
-
-        .status {
-            color: #38a169;
-            font-weight: bold;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <!-- Navigation bar đa trang -->
+        <!-- Navigation bar -->
         <nav class="navbar" aria-label="Main Navigation">
-            <a href="index.html" class="nav-link active">Trang chủ</a>
-            <a href="about.html" class="nav-link">Giới thiệu</a>
+            <a href="index.html" class="nav-link">Trang chủ</a>
+            <a href="about.html" class="nav-link active">Giới thiệu</a>
             <a href="contact.html" class="nav-link">Liên hệ</a>
         </nav>
 
-        <!-- Ảnh avatar đại diện -->
         <div class="avatar-wrapper">
-            <img src="avatar.jpg" alt="Avatar Nguyễn Công Bằng" class="avatar">
+            <img src="avatar.jpg" alt="Avatar" class="avatar">
         </div>
 
-        <h1>Xin chào, DevOps!</h1>
-        <h2>Lab 1 — Website Portfolio Đa Trang (Multi-page)</h2>
+        <h1>Về Tác Giả</h1>
+        <h2>Nguyễn Công Bằng — CNTT ICTU</h2>
 
-        <div class="info">
-            <p>👨‍🎓 <strong>Họ tên:</strong> Nguyễn Công Bằng</p>
-            <p>📌 <strong>MSSV:</strong> DTC2335180023</p>
-            <p>🚀 <strong>Bài học:</strong> DevOps Lab 1 — CI/CD Pipeline</p>
-            <p>⚙️ <strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
-            <p>📅 <strong>Ngày deploy:</strong> <span id="date"></span></p>
-            <p>✅ <strong>Pipeline status:</strong> <span class="status">Automated</span></p>
-        </div>
-
-        <div class="badge-list">
-            <span class="badge">HTML5</span>
-            <span class="badge">CSS3</span>
-            <span class="badge">Git</span>
-            <span class="badge">GitHub Actions</span>
-            <span class="badge">CI/CD</span>
-            <span class="badge">Lighthouse CI</span>
-            <span class="badge">DevOps</span>
+        <div class="about-content">
+            <h3>🎯 Giới thiệu bản thân</h3>
+            <p>Tôi là sinh viên ngành Công nghệ Thông tin tại Trường Đại học Công nghệ Thông tin & Truyền thông (ICTU), đam mê phát triển phần mềm và vận hành hệ thống theo phương pháp DevOps hiện đại.</p>
+            <br>
+            <h3>🛠️ Kỹ năng thực hành trong Lab 1</h3>
+            <ul>
+                <li>Quản lý phiên bản mã nguồn chuyên nghiệp với Git & GitHub.</li>
+                <li>Thiết kế quy trình CI/CD tự động bằng GitHub Actions.</li>
+                <li>Triển khai tự động (Auto-deploy) lên nền tảng GitHub Pages.</li>
+                <li>Đánh giá chất lượng trang web tự động qua Lighthouse CI.</li>
+            </ul>
         </div>
 
         <div class="footer">
-            <p>Deployed automatically via GitHub Actions Pipeline</p>
-            <p>Push code → CI Build → Test → Auto Deploy → Live!</p>
+            <p>DevOps Lab 1 — Multi-page Navigation Example</p>
         </div>
     </div>
-
-    <script>
-        document.getElementById('date').textContent = new Date().toLocaleDateString('vi-VN');
-    </script>
 </body>
 
 </html>
