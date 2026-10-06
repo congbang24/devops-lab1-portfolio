@@ -1,6 +1,6 @@
 # ============================================================
 # DevOps Lab 1 — CI/CD Pipeline với GitHub Actions
-# Tự động deploy website lên GitHub Pages mỗi khi push code
+# Tự động audit với Lighthouse CI và deploy lên GitHub Pages
 # ============================================================
 
 name: Deploy to GitHub Pages
@@ -14,10 +14,9 @@ on:
 permissions:
   contents: write
 
-
 # === Các job trong pipeline ===
 jobs:
-  # Job 1: Build & Deploy
+  # Job 1: Build, Audit & Deploy
   build-and-deploy:
     runs-on: ubuntu-latest   # Chạy trên máy ảo Ubuntu (free)
 
@@ -26,23 +25,33 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Kiểm tra HTML cơ bản
-      - name: Validate HTML
+      # Step 2: Kiểm tra các file HTML và tài nguyên
+      - name: Validate Files
         run: |
-          echo "Checking index.html exists..."
-          if [ -f "index.html" ]; then
-            echo "index.html found!"
-            echo "File size: $(wc -c < index.html) bytes"
-          else
-            echo " index.html NOT found!"
-            exit 1
-          fi
+          echo "=== KIỂM TRA TÀI NGUYÊN WEBSITE ==="
+          for file in index.html about.html contact.html avatar.jpg; do
+            if [ -f "$file" ]; then
+              echo "✅ $file tồn tại! (Kích thước: $(wc -c < "$file") bytes)"
+            else
+              echo "❌ $file KHÔNG tìm thấy!"
+              exit 1
+            fi
+          done
 
-      # Step 3: Deploy lên GitHub Pages
+      # Step 3: Audit chất lượng web với Lighthouse CI (Performance, Accessibility, SEO)
+      - name: Run Lighthouse CI Audit
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: './lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+        continue-on-error: true
+
+      # Step 4: Deploy lên GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
-          commit_message: "Auto-deploy from CI pipeline"
+          commit_message: "Auto-deploy: Multi-page, avatar & Lighthouse CI audit"
